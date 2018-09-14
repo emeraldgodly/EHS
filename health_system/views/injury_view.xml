@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!--form view-->
+        <record id="form_injury_model" model="ir.ui.view">
+            <field name="name">Injury</field>
+            <field name="model">injury.record</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="INJURY RECORD">
+                            <group>
+                                <field name="injury_damage" widget="priority"/>
+                                <field name="time"/>
+                                <field name="victim_name"/>
+                            </group>
+                            <group>
+                                <field name="place" widget="radio"/>
+                                <field name="step1"/>
+                            </group>
+                        </group>
+
+
+
+                            <notebook>
+                                <page string="1st Stage Image(Before)">
+                                    <group>
+                                        <group>
+                                            <field name="image1" widget="image"  width="40" height="15" class="oe_avatar"/>
+                                            <field name="description1" placeholder="Add image description..."/>
+                                            <field name="image2" widget="image"  width="40" height="15" class="oe_avatar"/>
+                                            <field name="description2" placeholder="Add image description"/>
+                                        </group>
+                                    </group>
+                                    <group>
+                                        <group>
+                                            <field name="image3" widget="image"  width="40" height="15" class="oe_avatar"/>
+                                            <field name="description3" placeholder="Add image description"/>
+                                            <field name="image4" widget="image"  width="40" height="15" class="oe_avatar"/>
+                                            <field name="description4" placeholder="Add image description"/>
+                                        </group>
+                                    </group>
+                                </page>
+                                <page string="2nd Stage Image(After)">
+                                    <group>
+                                        <group>
+                                            <field name="image5" widget="image"  width="40" height="15" class="oe_avatar"/>
+                                            <field name="description5" placeholder="Add image description"/>
+                                            <field name="image6" widget="image"  width="40" height="15" class="oe_avatar"/>
+                                            <field name="description6" placeholder="Add image description"/>
+                                        </group>
+                                    </group>
+                                    <group>
+                                        <group>
+                                            <field name="image7" widget="image"  width="40" height="15" class="oe_avatar"/>
+                                            <field name="description7" placeholder="Add image description"/>
+                                            <field name="image8" widget="image"  width="40" height="15" class="oe_avatar"/>
+                                            <field name="description8" placeholder="Add image description"/>
+                                        </group>
+                                    </group>
+                                </page>
+                            </notebook>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+
+
+
+
+
+        <!--tree view-->
+    <record id="tree_injury_customs_model" model="ir.ui.view">
+        <field name="name">injury.record.tree</field>
+        <field name="model">injury.record</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="victim_name"/>
+                <field name="time" />
+                <field name="place"/>
+                <field name="step1"/>
+
+
+            </tree>
+        </field>
+    </record>
+
+
+
+
+
+
+
+        <!--menuitem actions-->
+        <record id="injury_action" model="ir.actions.act_window">
+            <field name="name">INJURY</field>
+            <field name="res_model">injury.record</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                click here to create new item!
+            </p>
+            </field>
+        </record>
+
+
+
+
+        <!--<menuitem name="Injury Record" id="health_injury_submenu" parent="health_patients_menu" action="injury_action"/>-->
+
+    </data>
+</odoo>

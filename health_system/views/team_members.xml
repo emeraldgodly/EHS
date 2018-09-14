@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+
+
+        <!--form view-->
+        <record id="form_injury_model" model="ir.ui.view">
+            <field name="name">team_members.model.form</field>
+            <field name="model">team_members.model</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="RECORDS"/>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+         <!--menuitem actions-->
+        <record id="team_members_action" model="ir.actions.act_window">
+            <field name="name">Team Members</field>
+            <field name="res_model">team_members.model</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                click here to create new item!
+            </p>
+            </field>
+        </record>
+
+
+        <!--menuitem-->
+        <menuitem name="Fire" id="Fire_submenu" parent="health_type_menu" action="team_members_action"/>
+
+    </data>
+</odoo>
